@@ -1,0 +1,6 @@
+Building DAG of jobs...
+MissingInputException in line 4 of /mnt/xio/botany/Aman/vasuki/snakemake/rules/preprocessing.smk:
+Missing input files for rule all:
+    affected files:
+        manan_gruga/qc/cleaned/T1_S5_R_R1.fastq.gz
+        manan_gruga/qc/cleaned/T1_S5_R_R2.fastq.gz

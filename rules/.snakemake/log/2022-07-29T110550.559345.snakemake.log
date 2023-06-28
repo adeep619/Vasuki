@@ -1,0 +1,9 @@
+Building DAG of jobs...
+MissingInputException in line 26 of /mnt/xio/botany/Aman/vasuki/snakemake/rules/filter_plant_reads.smk:
+Missing input files for rule filter_plant_reads:
+    output: results_test/unmapped/B002.sam, results_test/unmapped/B001.sam
+    affected files:
+        results_test/mrna/B001_R2.fastq
+        results_test/mrna/B001_R1.fastq
+        results_test/mrna/B002_R1.fastq
+        results_test/mrna/B002_R2.fastq

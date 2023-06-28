@@ -1,0 +1,8 @@
+name: taxonomy
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+  - r
+dependencies:
+  - deepdish=0.3.4

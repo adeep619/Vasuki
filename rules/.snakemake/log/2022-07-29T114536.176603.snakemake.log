@@ -1,0 +1,2 @@
+SyntaxError in line 45 of /mnt/xio/botany/Aman/vasuki/snakemake/rules/filter_plant_reads.smk:
+unterminated string literal (detected at line 97)

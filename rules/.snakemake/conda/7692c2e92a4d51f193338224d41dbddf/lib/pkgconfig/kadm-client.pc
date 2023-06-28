@@ -1,0 +1,11 @@
+prefix=/mnt/xio/botany/Aman/vasuki/snakemake/rules/.snakemake/conda/7692c2e92a4d51f193338224d41dbddf
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: kadm-client
+Description: Kerberos administration client library
+Version: 1.17.2
+Requires.private: mit-krb5-gssapi gssrpc
+Cflags: -I${includedir}
+Libs: -L${libdir} -lkadm5clnt_mit

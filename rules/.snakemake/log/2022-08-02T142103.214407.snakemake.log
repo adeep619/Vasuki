@@ -1,0 +1,41 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 20
+Rules claiming more threads will be scaled down.
+Conda environments: ignored
+Job stats:
+job         count    min threads    max threads
+--------  -------  -------------  -------------
+all             1              1              1
+cutadapt        1             20             20
+total           2              1             20
+
+Select jobs to execute...
+
+[Tue Aug  2 14:21:03 2022]
+rule cutadapt:
+    input: ../manan_gruga/T1_S5_R_R1.fastq.gz, ../manan_gruga/T1_S5_R_R2.fastq.gz
+    output: manan_gruga_out/qc/cleaned/T1_S5_R_R1.fastq.gz, manan_gruga_out/qc/cleaned/T1_S5_R_R2.fastq.gz
+    log: manan_gruga_out/qc/cleaned/T1_S5_R.log
+    jobid: 1
+    reason: Missing output files: manan_gruga_out/qc/cleaned/T1_S5_R_R1.fastq.gz, manan_gruga_out/qc/cleaned/T1_S5_R_R2.fastq.gz
+    wildcards: results=manan_gruga_out, sample=T1_S5_R
+    threads: 20
+    resources: tmpdir=/tmp
+
+/mnt/xio/botany/anaconda3/envs/snakemake2/bin/python3.10 /mnt/xio/botany/Aman/vasuki/snakemake/rules/.snakemake/scripts/tmpqs1rpq2g.cutadapt.py
+[Tue Aug  2 14:21:03 2022]
+Error in rule cutadapt:
+    jobid: 1
+    output: manan_gruga_out/qc/cleaned/T1_S5_R_R1.fastq.gz, manan_gruga_out/qc/cleaned/T1_S5_R_R2.fastq.gz
+    log: manan_gruga_out/qc/cleaned/T1_S5_R.log (check log file(s) for error message)
+    conda-env: /mnt/xio/botany/Aman/vasuki/snakemake/rules/.snakemake/conda/a2b9327e5d14738b9c1493b4e35557b6
+
+RuleException:
+CalledProcessError in line 66 of /mnt/xio/botany/Aman/vasuki/snakemake/rules/preprocessing.smk:
+Command 'set -euo pipefail;  /mnt/xio/botany/anaconda3/envs/snakemake2/bin/python3.10 /mnt/xio/botany/Aman/vasuki/snakemake/rules/.snakemake/scripts/tmpqs1rpq2g.cutadapt.py' returned non-zero exit status 1.
+  File "/mnt/xio/botany/Aman/vasuki/snakemake/rules/preprocessing.smk", line 66, in __rule_cutadapt
+  File "/mnt/xio/botany/anaconda3/envs/snakemake2/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2022-08-02T142103.214407.snakemake.log

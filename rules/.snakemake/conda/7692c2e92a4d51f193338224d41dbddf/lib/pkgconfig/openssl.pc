@@ -1,0 +1,9 @@
+prefix=/mnt/xio/botany/Aman/vasuki/snakemake/rules/.snakemake/conda/7692c2e92a4d51f193338224d41dbddf
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: OpenSSL
+Description: Secure Sockets Layer and cryptography libraries and tools
+Version: 1.1.1q
+Requires: libssl libcrypto

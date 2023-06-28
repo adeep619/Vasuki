@@ -1,0 +1,44 @@
+==> 2022-07-29 11:11:35 <==
+# cmd: /mnt/xio/botany/anaconda3/envs/snakemake2/bin/mamba create --quiet --file /mnt/xio/botany/Aman/vasuki/snakemake/rules/.snakemake/conda/7692c2e92a4d51f193338224d41dbddf.yaml --prefix /mnt/xio/botany/Aman/vasuki/snakemake/rules/.snakemake/conda/7692c2e92a4d51f193338224d41dbddf
+# conda version: 4.13.0
++bioconda/linux-64::bowtie2-2.4.5-py39hd2f7db1_2
++bioconda/linux-64::c-ares-1.11.0-h470a237_1
++bioconda/linux-64::samtools-1.7-1
++conda-forge/linux-64::_libgcc_mutex-0.1-conda_forge
++conda-forge/linux-64::_openmp_mutex-4.5-2_gnu
++conda-forge/linux-64::bzip2-1.0.8-h7f98852_4
++conda-forge/linux-64::ca-certificates-2022.6.15-ha878542_0
++conda-forge/linux-64::curl-7.71.1-he644dc0_8
++conda-forge/linux-64::krb5-1.17.2-h926e7f8_0
++conda-forge/linux-64::ld_impl_linux-64-2.36.1-hea4e1c9_2
++conda-forge/linux-64::libcurl-7.71.1-hcdd3856_8
++conda-forge/linux-64::libedit-3.1.20191231-he28a2e2_2
++conda-forge/linux-64::libev-4.33-h516909a_1
++conda-forge/linux-64::libffi-3.4.2-h7f98852_5
++conda-forge/linux-64::libgcc-7.2.0-h69d50b8_2
++conda-forge/linux-64::libgcc-ng-12.1.0-h8d9b700_16
++conda-forge/linux-64::libgomp-12.1.0-h8d9b700_16
++conda-forge/linux-64::libnghttp2-1.41.0-hab1572f_1
++conda-forge/linux-64::libnsl-2.0.0-h7f98852_0
++conda-forge/linux-64::libssh2-1.10.0-ha56f1ee_2
++conda-forge/linux-64::libstdcxx-ng-12.1.0-ha89aaad_16
++conda-forge/linux-64::libuuid-2.32.1-h7f98852_1000
++conda-forge/linux-64::libzlib-1.2.11-h166bdaf_1014
++conda-forge/linux-64::lz4-c-1.9.3-h9c3ff4c_1
++conda-forge/linux-64::ncurses-6.3-h27087fc_1
++conda-forge/linux-64::openssl-1.1.1q-h166bdaf_0
++conda-forge/linux-64::perl-5.32.1-2_h7f98852_perl5
++conda-forge/linux-64::python-3.9.13-h9a8a25e_0_cpython
++conda-forge/linux-64::python_abi-3.9-2_cp39
++conda-forge/linux-64::readline-8.1.2-h0f457ee_0
++conda-forge/linux-64::setuptools-63.2.0-py39hf3d152e_0
++conda-forge/linux-64::sqlite-3.38.5-h4ff8645_0
++conda-forge/linux-64::tbb-2020.2-h4bd325d_4
++conda-forge/linux-64::tk-8.6.12-h27826a3_0
++conda-forge/linux-64::xz-5.2.5-h516909a_1
++conda-forge/linux-64::zlib-1.2.11-h166bdaf_1014
++conda-forge/linux-64::zstd-1.5.2-h8a70e8d_1
++conda-forge/noarch::pip-22.2.1-pyhd8ed1ab_0
++conda-forge/noarch::tzdata-2022a-h191b570_0
++conda-forge/noarch::wheel-0.37.1-pyhd8ed1ab_0
+# update specs: ['bowtie2=2.4', 'samtools']

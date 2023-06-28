@@ -1,0 +1,8 @@
+name: assemblyspades
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - spades
+  - salmon

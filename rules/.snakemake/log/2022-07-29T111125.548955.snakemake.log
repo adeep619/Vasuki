@@ -1,0 +1,56 @@
+Building DAG of jobs...
+Creating conda environment ../envs/bowtie.yml...
+Downloading and installing remote packages.
+Environment for /mnt/xio/botany/Aman/vasuki/snakemake/rules/../envs/bowtie.yml created (location: .snakemake/conda/7692c2e92a4d51f193338224d41dbddf)
+Using shell: /bin/bash
+Provided cores: 20
+Rules claiming more threads will be scaled down.
+Job stats:
+job                   count    min threads    max threads
+------------------  -------  -------------  -------------
+all                       1              1              1
+bowtie_build              1             20             20
+filter_plant_reads        1             20             20
+total                     3              1             20
+
+Select jobs to execute...
+
+[Fri Jul 29 11:11:36 2022]
+rule bowtie_build:
+    input: database/alnus/alnus_genome.fna
+    output: database/alnus/alnus_index.1.bt2
+    jobid: 2
+    reason: Software environment definition has changed since last execution
+    threads: 20
+    resources: tmpdir=/tmp
+
+bowtie2-build  database/alnus/alnus_genome.fna database/alnus/alnus_index --threads 20
+Activating conda environment: .snakemake/conda/7692c2e92a4d51f193338224d41dbddf
+[Fri Jul 29 11:21:01 2022]
+Finished job 2.
+1 of 3 steps (33%) done
+Select jobs to execute...
+
+[Fri Jul 29 11:21:01 2022]
+rule filter_plant_reads:
+    input: ../results_test/mrna/B002_R1.fastq, ../results_test/mrna/B002_R2.fastq, ../results_test/mrna/B001_R1.fastq, ../results_test/mrna/B001_R2.fastq
+    output: ../results_test/unmapped/B002.sam, ../results_test/unmapped/B001.sam
+    jobid: 3
+    reason: Missing output files: ../results_test/unmapped/B002.sam, ../results_test/unmapped/B001.sam
+    threads: 20
+    resources: tmpdir=/tmp
+
+bowtie2 -x database/alnus/alnus_index -1 ../results_test/mrna/B002_R1.fastq -2  ../results_test/mrna/B002_R2.fastq -S ../results_test/unmapped/B002.sam ../results_test/unmapped/B001.sam
+Activating conda environment: .snakemake/conda/7692c2e92a4d51f193338224d41dbddf
+[Fri Jul 29 11:21:01 2022]
+Error in rule filter_plant_reads:
+    jobid: 3
+    output: ../results_test/unmapped/B002.sam, ../results_test/unmapped/B001.sam
+    conda-env: /mnt/xio/botany/Aman/vasuki/snakemake/rules/.snakemake/conda/7692c2e92a4d51f193338224d41dbddf
+    shell:
+        bowtie2 -x database/alnus/alnus_index -1 ../results_test/mrna/B002_R1.fastq -2  ../results_test/mrna/B002_R2.fastq -S ../results_test/unmapped/B002.sam ../results_test/unmapped/B001.sam
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2022-07-29T111125.548955.snakemake.log

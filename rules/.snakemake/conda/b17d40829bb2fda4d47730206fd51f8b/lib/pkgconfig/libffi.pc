@@ -1,0 +1,11 @@
+prefix=/mnt/xio/botany/Aman/vasuki/snakemake/rules/.snakemake/conda/b17d40829bb2fda4d47730206fd51f8b
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+toolexeclibdir=${libdir}
+includedir=/mnt/xio/botany/Aman/vasuki/snakemake/rules/.snakemake/conda/b17d40829bb2fda4d47730206fd51f8b/include
+
+Name: libffi
+Description: Library supporting Foreign Function Interfaces
+Version: 3.4.2
+Libs: -L${toolexeclibdir} -lffi
+Cflags: -I${includedir}

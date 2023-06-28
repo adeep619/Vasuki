@@ -1,0 +1,46 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 20
+Rules claiming more threads will be scaled down.
+Job stats:
+job                   count    min threads    max threads
+------------------  -------  -------------  -------------
+all                       1              1              1
+get_unmapped_reads        1             20             20
+total                     2              1             20
+
+Select jobs to execute...
+
+[Fri Jul 29 12:10:53 2022]
+rule get_unmapped_reads:
+    input: ../results_test/unmapped/B002.sam, ../results_test/unmapped/B001.sam
+    output: ../results_test/unmapped/B002_R1.fastq, ../results_test/unmapped/B001_R1.fastq, ../results_test/unmapped/B002_R2.fastq, ../results_test/unmapped/B001_R2.fastq
+    jobid: 5
+    reason: Missing output files: ../results_test/unmapped/B001_R2.fastq, ../results_test/unmapped/B002_R2.fastq, ../results_test/unmapped/B002_R1.fastq, ../results_test/unmapped/B001_R1.fastq
+    threads: 20
+    resources: tmpdir=/tmp
+
+
+         samtools view -f4 ../results_test/unmapped/B002.sam ../results_test/unmapped/B001.sam > ../results_test/unmapped/unmapped.sam;
+         samtools sort -n ../results_test/unmapped/unmapped.sam -@ 20 -o  ../results_test/unmapped/unmapped.sort.sam;
+         samtools fastq unmapped.sort.sam -1 ../results_test/unmapped/B002_R1.fastq -2 ../results_test/unmapped/B002_R1.fastq; 
+         rm ../results_test/unmapped/unmapped.sort.sam ../results_test/unmapped/unmapped.sam;
+         
+Activating conda environment: .snakemake/conda/7692c2e92a4d51f193338224d41dbddf
+[Fri Jul 29 12:10:54 2022]
+Error in rule get_unmapped_reads:
+    jobid: 5
+    output: ../results_test/unmapped/B002_R1.fastq, ../results_test/unmapped/B001_R1.fastq, ../results_test/unmapped/B002_R2.fastq, ../results_test/unmapped/B001_R2.fastq
+    conda-env: /mnt/xio/botany/Aman/vasuki/snakemake/rules/.snakemake/conda/7692c2e92a4d51f193338224d41dbddf
+    shell:
+        
+         samtools view -f4 ../results_test/unmapped/B002.sam ../results_test/unmapped/B001.sam > ../results_test/unmapped/unmapped.sam;
+         samtools sort -n ../results_test/unmapped/unmapped.sam -@ 20 -o  ../results_test/unmapped/unmapped.sort.sam;
+         samtools fastq unmapped.sort.sam -1 ../results_test/unmapped/B002_R1.fastq -2 ../results_test/unmapped/B002_R1.fastq; 
+         rm ../results_test/unmapped/unmapped.sort.sam ../results_test/unmapped/unmapped.sam;
+         
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2022-07-29T121052.523184.snakemake.log

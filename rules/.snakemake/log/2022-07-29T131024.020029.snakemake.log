@@ -1,0 +1,2 @@
+SyntaxError in line 33 of /mnt/xio/botany/Aman/vasuki/snakemake/rules/filter_plant_reads.smk:
+invalid syntax. Perhaps you forgot a comma?

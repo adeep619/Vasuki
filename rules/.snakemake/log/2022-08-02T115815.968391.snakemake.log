@@ -1,0 +1,2 @@
+SyntaxError in line 3 of /mnt/xio/botany/Aman/vasuki/snakemake/rules/qc.smk:
+Unexpected keyword expand in rule definition (qc.smk, line 3)

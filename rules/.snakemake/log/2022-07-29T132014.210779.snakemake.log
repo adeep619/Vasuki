@@ -1,0 +1,62 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 20
+Rules claiming more threads will be scaled down.
+Job stats:
+job                count    min threads    max threads
+---------------  -------  -------------  -------------
+all                    1              1              1
+map_reads_alnus        2             20             20
+total                  3              1             20
+
+Select jobs to execute...
+
+[Fri Jul 29 13:20:15 2022]
+rule map_reads_alnus:
+    input: ../results_test/mrna/B002_R1.fastq, ../results_test/mrna/B002_R2.fastq
+    output: ../results_test/unmapped/B002.sam
+    jobid: 3
+    reason: Missing output files: ../results_test/unmapped/B002.sam
+    wildcards: sample=B002
+    threads: 20
+    resources: tmpdir=/tmp
+
+
+             bowtie2 -x database/alnus/alnus_index -1 ../results_test/mrna/B002_R1.fastq -2  ../results_test/mrna/B002_R2.fastq -S ../results_test/unmapped/B002.sam ;
+          
+Activating conda environment: .snakemake/conda/7692c2e92a4d51f193338224d41dbddf
+[Fri Jul 29 13:20:53 2022]
+Finished job 3.
+1 of 3 steps (33%) done
+Select jobs to execute...
+
+[Fri Jul 29 13:20:53 2022]
+rule map_reads_alnus:
+    input: ../results_test/mrna/B001_R1.fastq, ../results_test/mrna/B001_R2.fastq
+    output: ../results_test/unmapped/B001.sam
+    jobid: 4
+    reason: Missing output files: ../results_test/unmapped/B001.sam; Code has changed since last execution; Params have changed since last execution
+    wildcards: sample=B001
+    threads: 20
+    resources: tmpdir=/tmp
+
+
+             bowtie2 -x database/alnus/alnus_index -1 ../results_test/mrna/B001_R1.fastq -2  ../results_test/mrna/B001_R2.fastq -S ../results_test/unmapped/B001.sam ;
+          
+Activating conda environment: .snakemake/conda/7692c2e92a4d51f193338224d41dbddf
+[Fri Jul 29 13:22:19 2022]
+Finished job 4.
+2 of 3 steps (67%) done
+Select jobs to execute...
+
+[Fri Jul 29 13:22:19 2022]
+localrule all:
+    input: database/alnus/alnus_genome.fna, database/alnus/alnus_index.1.bt2, ../results_test/unmapped/B002.sam, ../results_test/unmapped/B001.sam
+    jobid: 0
+    reason: Input files updated by another job: ../results_test/unmapped/B001.sam, ../results_test/unmapped/B002.sam
+    resources: tmpdir=/tmp
+
+[Fri Jul 29 13:22:19 2022]
+Finished job 0.
+3 of 3 steps (100%) done
+Complete log: .snakemake/log/2022-07-29T132014.210779.snakemake.log

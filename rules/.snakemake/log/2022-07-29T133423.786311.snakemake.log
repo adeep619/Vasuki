@@ -1,0 +1,26 @@
+Building DAG of jobs...
+Job stats:
+job                   count    min threads    max threads
+------------------  -------  -------------  -------------
+all                       1              1              1
+get_unmapped_reads        2             20             20
+total                     3              1             20
+
+
+[Fri Jul 29 13:34:25 2022]
+rule get_unmapped_reads:
+    input: ../results_test/unmapped/B002.sam
+    output: ../results_test/unmapped/B002_R1.fastq, ../results_test/unmapped/B002_R2.fastq
+    jobid: 5
+    reason: Missing output files: ../results_test/unmapped/B002_R1.fastq, ../results_test/unmapped/B002_R2.fastq
+    wildcards: sample=B002
+    threads: 20
+    resources: tmpdir=/tmp
+
+WorkflowError:
+Error when formatting '
+             samtools view -u -f 12 -F 256 {input.fastq} > {params.path}/unmapped.sam;
+             samtools sort -n {params.path}/unmapped.sam -@ {threads} -o  {params.path}/unmapped.sort.sam;
+             samtools fastq {params.path}/unmapped.sort.sam -1 {output.reads[0]} -2 {output.reads[0]}; 
+#         rm {params.path}/unmapped.sort.sam {params.path}/unmapped.sam;
+        ' for rule get_unmapped_reads. 'InputFiles' object has no attribute 'fastq'

@@ -1,0 +1,11 @@
+prefix=/mnt/xio/botany/Aman/vasuki/snakemake/rules/.snakemake/conda/b17d40829bb2fda4d47730206fd51f8b
+exec_prefix=/mnt/xio/botany/Aman/vasuki/snakemake/rules/.snakemake/conda/b17d40829bb2fda4d47730206fd51f8b
+libdir=/mnt/xio/botany/Aman/vasuki/snakemake/rules/.snakemake/conda/b17d40829bb2fda4d47730206fd51f8b/lib
+includedir=/mnt/xio/botany/Aman/vasuki/snakemake/rules/.snakemake/conda/b17d40829bb2fda4d47730206fd51f8b/include
+
+Name: uuid
+Description: Universally unique id library
+Version: 2.32.1
+Requires:
+Cflags: -I${includedir}/uuid
+Libs: -L${libdir} -luuid

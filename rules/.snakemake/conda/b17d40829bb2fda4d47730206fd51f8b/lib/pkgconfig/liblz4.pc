@@ -1,0 +1,14 @@
+#   LZ4 - Fast LZ compression algorithm
+#   Copyright (C) 2011-2014, Yann Collet.
+#   BSD 2-Clause License (http://www.opensource.org/licenses/bsd-license.php)
+
+prefix=/mnt/xio/botany/Aman/vasuki/snakemake/rules/.snakemake/conda/b17d40829bb2fda4d47730206fd51f8b
+libdir=/mnt/xio/botany/Aman/vasuki/snakemake/rules/.snakemake/conda/b17d40829bb2fda4d47730206fd51f8b/lib
+includedir=/mnt/xio/botany/Aman/vasuki/snakemake/rules/.snakemake/conda/b17d40829bb2fda4d47730206fd51f8b/include
+
+Name: lz4
+Description: extremely fast lossless compression algorithm library
+URL: http://www.lz4.org/
+Version: 1.9.3
+Libs: -L/mnt/xio/botany/Aman/vasuki/snakemake/rules/.snakemake/conda/b17d40829bb2fda4d47730206fd51f8b/lib -llz4
+Cflags: -I/mnt/xio/botany/Aman/vasuki/snakemake/rules/.snakemake/conda/b17d40829bb2fda4d47730206fd51f8b/include

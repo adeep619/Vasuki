@@ -1,0 +1,8 @@
+name: diamond
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+  - r
+dependencies:
+  - bowtie2=2.4

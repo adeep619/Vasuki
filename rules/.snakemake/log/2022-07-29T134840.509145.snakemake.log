@@ -1,0 +1,68 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 20
+Rules claiming more threads will be scaled down.
+Job stats:
+job                   count    min threads    max threads
+------------------  -------  -------------  -------------
+all                       1              1              1
+get_unmapped_reads        2             20             20
+total                     3              1             20
+
+Select jobs to execute...
+
+[Fri Jul 29 13:48:41 2022]
+rule get_unmapped_reads:
+    input: ../results_test/unmapped/B002.sam
+    output: ../results_test/unmapped/B002_R1.fastq, ../results_test/unmapped/B002_R2.fastq
+    jobid: 5
+    reason: Missing output files: ../results_test/unmapped/B002_R2.fastq, ../results_test/unmapped/B002_R1.fastq
+    wildcards: sample=B002
+    threads: 20
+    resources: tmpdir=/tmp
+
+
+             samtools view -u -f 12 -F 256 ../results_test/unmapped/B002.sam > ../results_test/unmapped/unmapped.sam
+             samtools sort -n -@ 20 ../results_test/unmapped/unmapped.sam -o ../results_test/unmapped/unmapped.sort.sam
+             samtools fastq ../results_test/unmapped/unmapped.sort.sam -1 ../results_test/unmapped/B002_R1.fastq -2 ../results_test/unmapped/B002_R2.fastq; 
+#         rm ../results_test/unmapped/unmapped.sort.sam ../results_test/unmapped/unmapped.sam;
+        
+Activating conda environment: .snakemake/conda/7692c2e92a4d51f193338224d41dbddf
+[Fri Jul 29 13:49:01 2022]
+Finished job 5.
+1 of 3 steps (33%) done
+Select jobs to execute...
+
+[Fri Jul 29 13:49:01 2022]
+rule get_unmapped_reads:
+    input: ../results_test/unmapped/B001.sam
+    output: ../results_test/unmapped/B001_R1.fastq, ../results_test/unmapped/B001_R2.fastq
+    jobid: 6
+    reason: Missing output files: ../results_test/unmapped/B001_R1.fastq, ../results_test/unmapped/B001_R2.fastq
+    wildcards: sample=B001
+    threads: 20
+    resources: tmpdir=/tmp
+
+
+             samtools view -u -f 12 -F 256 ../results_test/unmapped/B001.sam > ../results_test/unmapped/unmapped.sam
+             samtools sort -n -@ 20 ../results_test/unmapped/unmapped.sam -o ../results_test/unmapped/unmapped.sort.sam
+             samtools fastq ../results_test/unmapped/unmapped.sort.sam -1 ../results_test/unmapped/B001_R1.fastq -2 ../results_test/unmapped/B001_R2.fastq; 
+#         rm ../results_test/unmapped/unmapped.sort.sam ../results_test/unmapped/unmapped.sam;
+        
+Activating conda environment: .snakemake/conda/7692c2e92a4d51f193338224d41dbddf
+[Fri Jul 29 13:49:26 2022]
+Finished job 6.
+2 of 3 steps (67%) done
+Select jobs to execute...
+
+[Fri Jul 29 13:49:26 2022]
+localrule all:
+    input: database/alnus/alnus_genome.fna, database/alnus/alnus_index.1.bt2, ../results_test/unmapped/B002.sam, ../results_test/unmapped/B001.sam, ../results_test/unmapped/B002_R1.fastq, ../results_test/unmapped/B002_R2.fastq, ../results_test/unmapped/B001_R1.fastq, ../results_test/unmapped/B001_R2.fastq
+    jobid: 0
+    reason: Input files updated by another job: ../results_test/unmapped/B002_R2.fastq, ../results_test/unmapped/B001_R1.fastq, ../results_test/unmapped/B002_R1.fastq, ../results_test/unmapped/B001_R2.fastq
+    resources: tmpdir=/tmp
+
+[Fri Jul 29 13:49:26 2022]
+Finished job 0.
+3 of 3 steps (100%) done
+Complete log: .snakemake/log/2022-07-29T134840.509145.snakemake.log

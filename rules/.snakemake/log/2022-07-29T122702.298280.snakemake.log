@@ -1,0 +1,4 @@
+Building DAG of jobs...
+WildcardError in line 1 of /mnt/xio/botany/Aman/vasuki/snakemake/rules/filter_plant_reads.smk:
+Wildcards in input files cannot be determined from output files:
+'sample'
