@@ -6,7 +6,7 @@ rule merge_jgi_tpm:
         output:
                 "{results}/anotation/{sample}/jgi_tpm_tax.txt"
         script:
-                "../scripts/merge_anot_tpm.py"
+                "../scripts/merge_anot_tpm_jgi.py"
 
 
 rule merge_jgi_uniprotID:
@@ -16,4 +16,4 @@ rule merge_jgi_uniprotID:
         output:
                 "{results}/anotation/{sample}/jgi_tax_tpm_unip.txt"
         script:
-                "../scripts/merge_anot_tpm_unip.py"
+                "../scripts/merge_anot_tpm_unip_jgi.py"

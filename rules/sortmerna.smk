@@ -71,8 +71,8 @@ rule sortrna:
 
 rule separate_interleaved:
     input: mrna = "{results}/mrna/{sample}_R1_R2.fastq",
-    output: mrna_R1 = "{results}/mrna/{sample}_R1.fastq",
-        mrna_R2 = "{results}/mrna/{sample}_R2.fastq",
+    output: mrna_R1 = temp("{results}/mrna/{sample}_R1.fastq"),
+        mrna_R2 = temp("{results}/mrna/{sample}_R2.fastq"),
     threads: 1
     run:
         separate_fastq(input.mrna, output.mrna_R1, output.mrna_R2)
