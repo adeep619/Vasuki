@@ -15,38 +15,40 @@ import glob
 
 if (config["format"] == "fastq"):
     # fastqc analysis
-    rule fastqc:
-        input:
-            expand("{raw}/{sample}_{read}.fastq.gz", raw=config["raw"], sample=config["samples"], read = config["reads"])
-        output:
-            expand("{results}/qc/fastqc/{sample}_{read}_fastqc.zip", results=config["results"], sample=config["samples"], read = config["reads"]),
-            expand("{results}/qc/fastqc/{sample}_{read}_fastqc.html", results=config["results"], sample=config["samples"], read = config["reads"])
-        conda:
-            "../envs/preprocessing.yaml"
-        params:
-            outdir = expand("{results}/qc/fastqc", results=config["results"])
-        threads: config["threads"]
-        shell:
-            """
-                fastqc {input} --outdir={params.outdir} -t {threads}
-            """
+	if (config["fastqc"]== "TRUE"):
 
-    # multiqc, summarizes fastqc reports
-    rule multiqc:
-        input:
-            expand("{results}/qc/fastqc/{sample}_{read}_fastqc.zip", results=config["results"], sample=config["samples"], read = config["reads"])
-        output:
-            "{results}/qc/multiqc_report.html"
-        params:
-            indir = "{results}/qc/fastqc",
-            outdir = "{results}/qc"
-        conda:
-            "../envs/preprocessing.yaml"
-        threads: 1
-        shell:
-            """
-                multiqc {params.indir} -o {params.outdir}
-            """
+		rule fastqc:
+			input:
+				expand("{raw}/{sample}_{read}.fastq.gz", raw=config["raw"], sample=config["samples"], read = config["reads"])
+			output:
+				expand("{results}/qc/fastqc/{sample}_{read}_fastqc.zip", results=config["results"], sample=config["samples"], read = config["reads"]),
+				expand("{results}/qc/fastqc/{sample}_{read}_fastqc.html", results=config["results"], sample=config["samples"], read = config["reads"])
+			conda:
+				"../envs/preprocessing.yaml"
+			params:
+				outdir = expand("{results}/qc/fastqc", results=config["results"])
+			threads: config["threads"]
+			shell:
+				"""
+					fastqc {input} --outdir={params.outdir} -t {threads}
+				"""
+
+		# multiqc, summarizes fastqc reports
+		rule multiqc:
+			input:
+				expand("{results}/qc/fastqc/{sample}_{read}_fastqc.zip", results=config["results"], sample=config["samples"], read = config["reads"])
+			output:
+				"{results}/qc/multiqc_report.html"
+			params:
+				indir = "{results}/qc/fastqc",
+				outdir = "{results}/qc"
+			conda:
+				"../envs/preprocessing.yaml"
+			threads: 1
+			shell:
+				"""
+					multiqc {params.indir} -o {params.outdir}
+				"""
 
 # cut adapters and low quality reads
 rule cutadapt:
