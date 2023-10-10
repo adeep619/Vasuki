@@ -15,7 +15,7 @@ import glob
 
 if (config["format"] == "fastq"):
     # fastqc analysis
-	if (config["fastqc"]== "TRUE"):
+	if config["fastqc"] :
 
 		rule fastqc:
 			input:

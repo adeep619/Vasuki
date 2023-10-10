@@ -16,8 +16,8 @@
 rule all:
     input:
         # output preprocessing
-        expand("{results}/qc/fastqc/{sample}_{read}_fastqc.zip", results=config["results"], sample=config["samples"], read = config["reads"]),
-        expand("{results}/qc/multiqc_report.html", results=config["results"]),
+        expand("{results}/qc/fastqc/{sample}_{read}_fastqc.zip", results=config["results"], sample=config["samples"], read = config["reads"]) if config["fastqc"]  else [],
+        expand("{results}/qc/multiqc_report.html", results=config["results"]) if config["format"] == "fastq" else [],
 #        expand("{results}/qc/cleaned/{sample}_{read}.{format}.gz", results=config["results"], sample=config["samples"], read = config["reads"], format = config["format"]) if config["format"] == "fastq" else expand("{results}/qc/cleaned/{sample}.{format}.gz", results=config["results"], sample=config["samples"], format = config["format"]),
         # output sortmerna
 #        expand("{results}/mrna/{sample}_{read}.fastq", results=config["results"], sample=config["samples"], read = config["reads"]),
