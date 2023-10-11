@@ -1,100 +1,52 @@
 ## Vasuki
-installation of Megan is important
-this pipeline needs a database folder from JGI, UniProt, and Megan.
+- installation of Megan is important
+- this pipeline needs a database folder from JGI, UniProt, and Megan.
 
 ## database folder 
-./
-./bac_db
-./jgi
-./jgi/aa_combined.fasta
-./jgi/download_all_taxonomy_from_NCBI.txt
-./jgi/jgi_taxids.txt
-./jgi/Final_taxonomy.txt
-./jgi/Final_anotation.txt
-./jgi/diamond_index_jgi.dmnd
-./jgi/not_complete_downklload
-./fungi_db
-./fungi_db/hash.k2d
-./fungi_db/hash.k2d/library
-./fungi_db/hash.k2d/library/fungi
-./fungi_db/hash.k2d/library/fungi/assembly_summary.txt
-./fungi_db/hash.k2d/taxonomy
-./blastx
-./blastx/fungi.25.protein.faa
-./blastx/bac.dmnd
-./blastx/fungi.dmnd
-./blastx/bacteria.nonredundant_protein.99.protein.faa
-./alnus
-./alnus/alnus_index.3.bt2
-./alnus/alnus_index.rev.1.bt2
-./alnus/alnus_index.1.bt2
-./alnus/alnus_index.rev.2.bt2
-./alnus/alnus_index.2.bt2
-./alnus/alnus_genome.fna
-./alnus/not_align.1
-./alnus/alnus_index.4.bt2
-./alnus/not_align.2
-./bac_nr_ncbi
-./bac_nr_ncbi/uniprot2kegg.txt
-./bac_nr_ncbi/uniprot2ko.txt
-./bac_nr_ncbi/uniprot2gene.txt
-./bac_nr_ncbi/uniprot_sprot.db
-./bac_nr_ncbi/cazy_accession.txt
-./bac_nr_ncbi/uniprot_sprot.dmnd
-./bac_nr_ncbi/ko2pathway.txt
-./
-./bac_db
-./jgi
-./jgi/download_all_taxonomy_from_NCBI.txt
-./jgi/jgi_taxids.txt
-./jgi/Final_taxonomy.txt
-./jgi/Final_anotation.txt
-./jgi/diamond_index_jgi.dmnd
-./jgi/not_complete_downklload
-./fungi_db
-./fungi_db/hash.k2d
-./fungi_db/hash.k2d/library
-./fungi_db/hash.k2d/library/fungi
-./fungi_db/hash.k2d/library/fungi/assembly_summary.txt
-./fungi_db/hash.k2d/taxonomy
-./blastx
-./blastx/fungi.25.protein.faa
-./blastx/bac.dmnd
-./blastx/fungi.dmnd
-./blastx/bacteria.nonredundant_protein.99.protein.faa
-./alnus
-./alnus/alnus_index.3.bt2
-./alnus/alnus_index.rev.1.bt2
-./alnus/alnus_index.1.bt2
-./alnus/alnus_index.rev.2.bt2
-./alnus/alnus_index.2.bt2
-./alnus/alnus_genome.fna
-./alnus/not_align.1
-./alnus/alnus_index.4.bt2
-./alnus/not_align.2
-./bac_nr_ncbi
-./bac_nr_ncbi/uniprot2kegg.txt
-./bac_nr_ncbi/uniprot2ko.txt
-./bac_nr_ncbi/uniprot2gene.txt
-./bac_nr_ncbi/uniprot_sprot.db
-./bac_nr_ncbi/cazy_accession.txt
-./bac_nr_ncbi/uniprot_sprot.dmnd
-./bac_nr_ncbi/ko2pathway.txt
-./bac_nr_ncbi/uniprot_sprot.fasta.gz
-./bac_nr_ncbi/stat.txt
-./bac_nr_ncbi/cazy_activity.txt
-./bac_nr_ncbi/uniprot2ko.h5
-./bac_nr_ncbi/uniprot_sprot.db.info
-./bac_nr_ncbi/Final_anotation.txt
-./bac_nr_ncbi/idmapping.dat.gz
-./bac_nr_ncbi/uniprot2ko.txt.save
-./bac_nr_ncbi/diamond_index_bac_nr.dmnd
-
-./bac_nr_ncbi/stat.txt
-./bac_nr_ncbi/cazy_activity.txt
-./bac_nr_ncbi/uniprot2ko.h5
-./bac_nr_ncbi/uniprot_sprot.db.info
-./bac_nr_ncbi/Final_anotation.txt
-./bac_nr_ncbi/idmapping.dat.gz
-./bac_nr_ncbi/uniprot2ko.txt.save
-./bac_nr_ncbi/diamond_index_bac_nr.dmnd
+ - ./
+- ./bac_db
+- ./jgi
+- ./jgi/aa_combined.fasta
+- ./jgi/download_all_taxonomy_from_NCBI.txt
+- ./jgi/jgi_taxids.txt
+- ./jgi/Final_taxonomy.txt
+- ./jgi/Final_anotation.txt
+- ./jgi/diamond_index_jgi.dmnd
+- ./jgi/not_complete_downklload
+- ./fungi_db
+- ./fungi_db/hash.k2d
+- ./fungi_db/hash.k2d/library
+- ./fungi_db/hash.k2d/library/fungi
+- ./fungi_db/hash.k2d/library/fungi/assembly_summary.txt
+- ./fungi_db/hash.k2d/taxonomy
+- ./blastx
+- ./blastx/fungi.25.protein.faa
+- ./blastx/bac.dmnd
+- ./blastx/fungi.dmnd
+- ./blastx/bacteria.nonredundant_protein.99.protein.faa
+- ./alnus
+- ./alnus/alnus_index.3.bt2
+- ./alnus/alnus_index.rev.1.bt2
+- ./alnus/alnus_index.1.bt2
+- ./alnus/alnus_index.rev.2.bt2
+- ./alnus/alnus_index.2.bt2
+- ./alnus/alnus_genome.fna
+- ./alnus/not_align.1
+- ./alnus/alnus_index.4.bt2
+- ./alnus/not_align.2
+- ./bac_nr_ncbi
+- ./bac_nr_ncbi/uniprot2kegg.txt
+- ./bac_nr_ncbi/uniprot2ko.txt
+- ./bac_nr_ncbi/uniprot2gene.txt
+- ./bac_nr_ncbi/uniprot_sprot.db
+- ./bac_nr_ncbi/cazy_accession.txt
+- ./bac_nr_ncbi/uniprot_sprot.dmnd
+- ./bac_nr_ncbi/ko2pathway.txt
+- ./bac_nr_ncbi/stat.txt
+- ./bac_nr_ncbi/cazy_activity.txt
+- ./bac_nr_ncbi/uniprot2ko.h5
+- ./bac_nr_ncbi/uniprot_sprot.db.info
+- ./bac_nr_ncbi/Final_anotation.txt
+- ./bac_nr_ncbi/idmapping.dat.gz
+- ./bac_nr_ncbi/uniprot2ko.txt.save
+- ./bac_nr_ncbi/diamond_index_bac_nr.dmnd
