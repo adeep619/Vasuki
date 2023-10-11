@@ -43,7 +43,7 @@ if (config["format"] == "fastq"):
 				indir = "{results}/qc/fastqc",
 				outdir = "{results}/qc"
 			conda:
-				"../envs/preprocessing.yaml"
+				"../envs/multiqc.yaml"
 			threads: 1
 			shell:
 				"""
