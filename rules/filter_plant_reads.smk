@@ -46,7 +46,7 @@ rule get_unmapped_reads:
     threads: config["threads"]
     shell:
          """
-             samtools view -u -f 2 -F 256 {input.sam_file} > {params.path}/unmapped.sam
+             samtools view -u -f 12 -F 256 {input.sam_file} > {params.path}/unmapped.sam
              samtools sort -n -@ {threads} {params.path}/unmapped.sam -o {params.path}/unmapped.sort.sam
 #             samtools fastq {params.path}/unmapped.sort.sam -1 {output.reads[0]} -2 {output.reads[1]}; 
              bedtools bamtofastq -i {params.path}/unmapped.sort.sam -fq {output.reads[0]} -fq2 {output.reads[1]}

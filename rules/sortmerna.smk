@@ -72,7 +72,7 @@ if config["rrna"]=="sortmerna":
 		input: mrna = "{results}/mrna/{sample}_R1_R2.fastq",
 		output: mrna_R1 = temp("{results}/mrna/{sample}_R1.fastq"),
 			mrna_R2 = temp("{results}/mrna/{sample}_R2.fastq"),
-		threads: 1
+		threads: 5
 		run:
 			separate_fastq(input.mrna, output.mrna_R1, output.mrna_R2)
 
@@ -83,7 +83,8 @@ else:
 		output:
 			mrna = expand("{{results}}/mrna/{{sample}}_{read}.fastq", read=config["reads"])
 		conda: "../envs/ribodetector.yaml"
+                threads: config["threads"]
 		shell:
 			"""
-			   ribodetector_cpu -t 40  -l 100   -i  {input.reads[0]} {input.reads[1]} -e rrna --chunk_size 10000  -o {output.mrna[0]}  {output.mrna[1]}
+			   ribodetector_cpu -t {threads}  -l 100   -i  {input.reads[0]} {input.reads[1]} -e rrna   -o {output.mrna[0]}  {output.mrna[1]}
 			"""
