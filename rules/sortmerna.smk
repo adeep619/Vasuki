@@ -86,5 +86,6 @@ else:
                 threads: config["threads"]
 		shell:
 			"""
-			   ribodetector_cpu -t {threads}  -l 100   -i  {input.reads[0]} {input.reads[1]} -e rrna  -o {output.mrna[0]}  {output.mrna[1]}
+			   ribodetector -t {threads}  -l 100   -i  {input.reads[0]} {input.reads[1]} -m 8 --chunk-size 254 -e rrna  -o {output.mrna[0]}  {output.mrna[1]}
+#                          ribodetector_cpu -t {threads}  -l 100   -i  {input.reads[0]} {input.reads[1]} -e rrna --chunk-size 254 -o {output.mrna[0]}  {output.mrna[1]}
 			"""
