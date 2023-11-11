@@ -41,10 +41,10 @@ rule all:
         ## output NCBI bacteria diamond search
 #        expand("{results}/anotation/{sample}/{sample}_ncbi.tsv", results=config["results"], sample=config["samples"]),
 	## MEGAN output for NCBI
-	expand("{results}/megan/{sample}_megan.daa", results=config["results"], sample=config["samples"]),
-        expand("{results}/megan/{sample}_taxinfo.txt", results=config["results"], sample=config["samples"]),
-	expand("{results}/anotation/{sample}/megan_tpm_tax.txt", results=config["results"], sample=config["samples"]),
-	expand("{results}/anotation/{sample}/megan_tax_tpm_unip.txt", results=config["results"], sample=config["samples"]),
+	expand("{results}/megan/{sample}_megan.daa", results=config["results"], sample=config["samples"]) if config["megan"] else [],
+        expand("{results}/megan/{sample}_taxinfo.txt", results=config["results"], sample=config["samples"]) if config["megan"] else [],
+	expand("{results}/anotation/{sample}/megan_tpm_tax.txt", results=config["results"], sample=config["samples"]) if config["megan"] else [],
+	expand("{results}/anotation/{sample}/megan_tax_tpm_unip.txt", results=config["results"], sample=config["samples"]) if config["megan"] else [],
         # JGI Taxonomy Anotation
 	expand("{results}/anotation/{sample}/jgi_tpm_tax.txt", results=config["results"], sample=config["samples"]),
 	expand("{results}/anotation/{sample}/jgi_tax_tpm_unip.txt", results=config["results"], sample=config["samples"]),
