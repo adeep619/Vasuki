@@ -21,4 +21,4 @@ echo "enter the  config name"
 read var
 #snakemake -j 50 -s totalRNA_search.smk --use-conda --configfile config.yaml -p 
 env_loc=$(conda info --base)/etc/profile.d/conda.sh
-screen  -S $var bash -c "source $env_loc ; conda activate vasuki ; snakemake -j 128  -s Snakefile.smk --use-conda --configfile $var.yaml -p  -r  --rerun-incomplete ; exec sh"
+screen  -S $var bash -c "source $env_loc ; conda activate vasuki ; snakemake -j 128  -s Snakefile2.smk --use-conda --configfile $var.yaml -p  -r  --rerun-incomplete   ; exec sh"

@@ -3,11 +3,70 @@
 # Parameters for input and output data #########################################
 
 samples:
-    ES22_IMP_S_C01_001: "ES22_IMP_S_C01_001"
-    ES22_IMP_S_C02_008: "ES22_IMP_S_C02_008"
-    ES22_IMP_S_C03_015: "ES22_IMP_S_C03_015"
-    ES22_IMP_S_C04_022: "ES22_IMP_S_C04_022"
-    ES22_IMP_S_C05_029: "ES22_IMP_S_C05_029"
+##    ES22_IMP_S_C01_001: "ES22_IMP_S_C01_001"
+##    ES22_IMP_S_C02_008: "ES22_IMP_S_C02_008"
+##    ES22_IMP_S_C03_015: "ES22_IMP_S_C03_015"
+##    ES22_IMP_S_C04_022: "ES22_IMP_S_C04_022"
+##    ES22_IMP_S_C05_029: "ES22_IMP_S_C05_029"
+##    ES22_IMP_S_C06_036: "ES22_IMP_S_C06_036"
+##    ES22_IMP_S_C07_043: "ES22_IMP_S_C07_043"
+##    ES22_IMP_S_C08_050: "ES22_IMP_S_C08_050"
+##    ES22_IMP_S_C09_057: "ES22_IMP_S_C09_057"
+##    ES22_IMP_S_C10_064: "ES22_IMP_S_C10_064"
+##    ES22_IMP_S_C11_071: "ES22_IMP_S_C11_071"
+##    ES22_IMP_S_C12_078: "ES22_IMP_S_C12_078"
+##    ES22_IMP_S_C13_085: "ES22_IMP_S_C13_085"
+##    ES22_IMP_S_C14_092: "ES22_IMP_S_C14_092"
+##    ES22_IMP_S_C15_099: "ES22_IMP_S_C15_099"
+##    ES22_IMP_S_C16_106: "ES22_IMP_S_C16_106"
+##    ES22_IMP_S_C17_113: "ES22_IMP_S_C17_113"
+##    ES22_IMP_S_C18_120: "ES22_IMP_S_C18_120"
+##    ES22_IMP_S_C19_127: "ES22_IMP_S_C19_127"
+##    ES22_IMP_S_C20_134: "ES22_IMP_S_C20_134"
+##    ES22_IMP_S_C21_141: "ES22_IMP_S_C21_141"
+##    ES22_IMP_S_C22_148: "ES22_IMP_S_C22_148"
+##    ES22_IMP_S_C23_155: "ES22_IMP_S_C23_155"
+##    ES22_IMP_S_C24_162: "ES22_IMP_S_C24_162"
+##    ES22_IMP_S_C25_169: "ES22_IMP_S_C25_169"
+##    ES22_IMP_S_C26_176: "ES22_IMP_S_C26_176"
+##    ES22_IMP_S_C27_183: "ES22_IMP_S_C27_183"
+##    ES22_IMP_S_C28_190: "ES22_IMP_S_C28_190"
+##    ES22_IMP_S_C29_197: "ES22_IMP_S_C29_197"
+##    ES22_IMP_S_C30_204: "ES22_IMP_S_C30_204"
+##    ES22_IMP_S_C31_211: "ES22_IMP_S_C31_211"
+    ES22_IMP_S_C32_218: "ES22_IMP_S_C32_218"
+    ES22_IMP_S_C33_255: "ES22_IMP_S_C33_255"
+    ES22_IMP_S_C34_232: "ES22_IMP_S_C34_232"
+    ES22_IMP_S_C35_239: "ES22_IMP_S_C35_239"
+    ES22_IMP_S_C36_246: "ES22_IMP_S_C36_246"
+    ES22_IMP_S_C37_253: "ES22_IMP_S_C37_253"
+    ES22_IMP_S_C38_260: "ES22_IMP_S_C38_260"
+    ES22_IMP_S_C39_267: "ES22_IMP_S_C39_267"
+    ES22_IMP_S_C40_274: "ES22_IMP_S_C40_274"
+    ES22_IMP_S_C41_281: "ES22_IMP_S_C41_281"
+    ES22_IMP_S_C42_288: "ES22_IMP_S_C42_288"
+    ES22_IMP_S_C43_295: "ES22_IMP_S_C43_295"
+    ES22_IMP_S_C44_302: "ES22_IMP_S_C44_302"
+    ES22_IMP_S_C45_309: "ES22_IMP_S_C45_309"
+    ES22_IMP_S_C46_316: "ES22_IMP_S_C46_316"
+    ES22_IMP_S_C47_323: "ES22_IMP_S_C47_323"
+    ES22_IMP_S_C48_330: "ES22_IMP_S_C48_330"
+    ES22_IMP_S_C49_337: "ES22_IMP_S_C49_337"
+    ES22_IMP_S_C50_344: "ES22_IMP_S_C50_344"
+##    ES22_IMP_S_C51_351: "ES22_IMP_S_C51_351"
+    ES22_IMP_S_C52_358: "ES22_IMP_S_C52_358"
+    ES22_IMP_S_C53_365: "ES22_IMP_S_C53_365"
+    ES22_IMP_S_C54_372: "ES22_IMP_S_C54_372"
+    ES22_IMP_S_C55_379: "ES22_IMP_S_C55_379"
+    ES22_IMP_S_C56_386: "ES22_IMP_S_C56_386"
+    ES22_IMP_S_C57_393: "ES22_IMP_S_C57_393"
+    ES22_IMP_S_C58_400: "ES22_IMP_S_C58_400"
+    ES22_IMP_S_C59_407: "ES22_IMP_S_C59_407"
+    ES22_IMP_S_C60_414: "ES22_IMP_S_C60_414"
+    ES22_IMP_S_C61_421: "ES22_IMP_S_C61_421"
+    ES22_IMP_S_C62_428: "ES22_IMP_S_C62_428"
+    ES22_IMP_S_C63_435: "ES22_IMP_S_C63_435"
+    ES22_IMP_S_C64_442: "ES22_IMP_S_C64_442"
 
 #   T1_S5_R_1_mil: "T1_S5_R_1_mil"
 #   B002: 'B002'  # Samples names start with B only
@@ -22,8 +81,11 @@ reads: ["R1", "R2"] # Read extension: a list with either ["R1", "R2"] for paired
 threads: 127 # Maximum number of threads used by single snakemake rule, the maximum is automatically set to cores.
 maxmem: 500000 # Maximum memory used in mb. For assembly ensure sufficient memory.
 io: 5 # Restriction on input/output operations.
+
+megan: FALSE
 rrna: "ribonator" # or sortmerna
 fastqc: TRUE
+KEGG: TRUE
 # Cutadapt #####################################################################
 
 adapter: "GATCGGAAGAGCA" # Illumina adapter sequence, first 13bp
@@ -43,6 +105,6 @@ jgi_organism_ids: "fungi_ids_list.txt"
 #jgi_database_path: "jgi_database/aa_combined.fasta"
 
 ## KEGG Annotation
-KO_list_file: "/mnt/biodiv/KEGG/kegg/genes/ko/ko_genes.list"
-KEGG_pathways: "/mnt/biodiv/KEGG/kegg/pathway/pathway.list"
+KO_list_file: "/mnt/disk2/kegg/ko_genes.list"
+KEGG_pathways: "/mnt/disk2/kegg/pathway.list"
 

@@ -17,7 +17,7 @@ rule all:
     input:
         # output preprocessing
         expand("{results}/qc/fastqc/{sample}_{read}_fastqc.zip", results=config["results"], sample=config["samples"], read = config["reads"]) if config["fastqc"]  else [],
-        expand("{results}/qc/multiqc_report.html", results=config["results"]) if config["format"] == "fastq" else [],
+#        expand("{results}/qc/multiqc_report.html", results=config["results"]) if config["format"] == "fastq" else [],
 #        expand("{results}/qc/cleaned/{sample}_{read}.{format}.gz", results=config["results"], sample=config["samples"], read = config["reads"], format = config["format"]) if config["format"] == "fastq" else expand("{results}/qc/cleaned/{sample}.{format}.gz", results=config["results"], sample=config["samples"], format = config["format"]),
         # output sortmerna
 #        expand("{results}/mrna/{sample}_{read}.fastq", results=config["results"], sample=config["samples"], read = config["reads"]),
@@ -34,23 +34,23 @@ rule all:
 	# Uniprot diamond
 	expand("{results}/diamond/{sample}_uniprot.csv", results=config["results"], sample=config["samples"]),
 	expand("{results}/anotation/{sample}/jgi_tax_tpm_unip.txt", results=config["results"], sample=config["samples"]),
-	expand("{results}/uniprot/{sample}_uniprot_ko.tab", results=config["results"], sample=config["samples"]),
+	expand("{results}/uniprot/{sample}_uniprot_ko.tab", results=config["results"], sample=config["samples"]) if  config["KEGG"] else [],
         ## output JGI search with diamond
 #        expand("{results}/anotation/{sample}/{sample}_jgi_complete_anot.tsv", results=config["results"], sample=config["samples"]),
 	expand("{results}/anotation/{sample}/{sample}_jgi_tax.tsv", results=config["results"], sample=config["samples"]),
         ## output NCBI bacteria diamond search
 #        expand("{results}/anotation/{sample}/{sample}_ncbi.tsv", results=config["results"], sample=config["samples"]),
 	## MEGAN output for NCBI
-	expand("{results}/megan/{sample}_megan.daa", results=config["results"], sample=config["samples"]),
-        expand("{results}/megan/{sample}_taxinfo.txt", results=config["results"], sample=config["samples"]),
-	expand("{results}/anotation/{sample}/megan_tpm_tax.txt", results=config["results"], sample=config["samples"]),
-	expand("{results}/anotation/{sample}/megan_tax_tpm_unip.txt", results=config["results"], sample=config["samples"]),
+	expand("{results}/megan/{sample}_megan.daa", results=config["results"], sample=config["samples"]) if  config["megan"] else [],
+        expand("{results}/megan/{sample}_taxinfo.txt", results=config["results"], sample=config["samples"]) if  config["megan"] else [],
+	expand("{results}/anotation/{sample}/megan_tpm_tax.txt", results=config["results"], sample=config["samples"]) if  config["megan"] else [],
+	expand("{results}/anotation/{sample}/megan_tax_tpm_unip.txt", results=config["results"], sample=config["samples"]) if  config["megan"] else [],
         # JGI Taxonomy Anotation
 	expand("{results}/anotation/{sample}/jgi_tpm_tax.txt", results=config["results"], sample=config["samples"]),
 	expand("{results}/anotation/{sample}/jgi_tax_tpm_unip.txt", results=config["results"], sample=config["samples"]),
         #### for KEGG DATABASE###
         expand("database/bac_nr_ncbi/ko2pathway.txt" if config["KEGG_pathways"] != "" else []),
-        expand(["database/bac_nr_ncbi/uniprot2ko.txt","database/bac_nr_ncbi/uniprot2kegg.txt"])
+        expand(["database/bac_nr_ncbi/uniprot2ko.txt","database/bac_nr_ncbi/uniprot2kegg.txt"]) if  config["KEGG"] else []
 
 
 # global constraints
@@ -84,7 +84,7 @@ include: "rules/index_jgi_diamond.smk"
 include: "rules/diamond_jgi_search.smk"
 
 # to create KEGG Database
-include: "rules/create_kegg_mapping.smk"
+#include: "rules/create_kegg_mapping.smk"
 include: "rules/create_uniprot_db.smk"
 include: "rules/filter_plant_reads.smk"
 
