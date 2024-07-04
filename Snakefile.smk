@@ -31,6 +31,9 @@ rule all:
         expand("{results}/assembly/trinity_{sample}/Trinity.fasta", results=config["results"], sample=config["samples"]) if config["assembly"]=="TRINITY" else [],
         expand("{results}/assembly/quant_{sample}/quant.sf", results=config["results"], sample=config["samples"]),
 	expand("{results}/assembly/quant_{sample}/quant_edit.sf", results=config["results"], sample=config["samples"]),
+        # NCBI diamond {results}/diamond/{sample}_ncbi.csv
+	expand("{results}/bac_diamond/{sample}_ncbi.csv", results=config["results"], sample=config["samples"]),
+
 	# Uniprot diamond
 	expand("{results}/diamond/{sample}_uniprot.csv", results=config["results"], sample=config["samples"]),
 	expand("{results}/anotation/{sample}/jgi_tax_tpm_unip.txt", results=config["results"], sample=config["samples"]),
@@ -51,6 +54,10 @@ rule all:
         #### for KEGG DATABASE###
         expand("database/bac_nr_ncbi/ko2pathway.txt" if config["KEGG_pathways"] != "" else []),
         expand(["database/bac_nr_ncbi/uniprot2ko.txt","database/bac_nr_ncbi/uniprot2kegg.txt"]) if  config["KEGG"] else []
+        ##### CAzy diamond
+	expand("{results}/cazy_diamond/{sample}_ncbi.csv", results=config["results"], sample=config["samples"]),
+
+        
 
 
 # global constraints
@@ -77,7 +84,7 @@ include: "rules/uniprot.smk"
 ## to make index NCBI NR bacteria
 include: "rules/index_ncbi_diamond.smk"
 ## run diamond search against NCBI NR bacteria
-#include: "rules/diamond_ncbi_search.smk"
+include: "rules/diamond_ncbi_search.smk"
 # to make index of JGI ###
 include: "rules/index_jgi_diamond.smk"
 # to diamond seach against JGI 
@@ -96,3 +103,5 @@ include: "rules/jgi_tpm_merge.smk"
 # for NCBI megan merge
 include: "rules/megan_tpm_merge.smk"
 include: "rules/index_blastx.smk"
+# for cazy diamond
+include: "rules/diamond_cazy.smk"
