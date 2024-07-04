@@ -20,7 +20,7 @@ rule download_uniprot:
 rule unpack_uniprot:
     input: "database/bac_nr_ncbi/uniprot_sprot.fasta.gz"
     output: "database/bac_nr_ncbi/uniprot_sprot.fasta"
-    shell: "gunzip -c {input} > {output}"
+    shell: "pigz -c {input} > {output}"
 
 rule make_index_uniprot:
     input:

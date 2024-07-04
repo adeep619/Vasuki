@@ -1,5 +1,5 @@
 file2=open(snakemake.output[0], 'w')
-file2.write(f'#trinityId\t#proteinId\t#organismId\n')
+file2.write(f'Name\t#proteinId\t#organismId\n')
 with open(snakemake.input[0], 'r') as file:
     for line in file:
         if 'jgi' in line:

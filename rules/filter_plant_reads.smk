@@ -2,7 +2,7 @@ rule download_alnus_genome:
     output:
           expand("database/alnus/alnus_genome.fna")
     shell:
-         " wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/003/254/965/GCA_003254965.1_ASM325496v1/GCA_003254965.1_ASM325496v1_genomic.fna.gz -O {output}.gz ; gunzip {output}.gz > {output} "
+         " wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/003/254/965/GCA_003254965.1_ASM325496v1/GCA_003254965.1_ASM325496v1_genomic.fna.gz -O {output}.gz ; pigz {output}.gz > {output} "
 
 
 rule bowtie_build:
