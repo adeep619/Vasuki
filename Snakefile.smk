@@ -53,9 +53,9 @@ rule all:
 	expand("{results}/anotation/{sample}/jgi_tax_tpm_unip.txt", results=config["results"], sample=config["samples"]),
         #### for KEGG DATABASE###
         expand("database/bac_nr_ncbi/ko2pathway.txt" if config["KEGG_pathways"] != "" else []),
-        expand(["database/bac_nr_ncbi/uniprot2ko.txt","database/bac_nr_ncbi/uniprot2kegg.txt"]) if  config["KEGG"] else []
+        expand(["database/bac_nr_ncbi/uniprot2ko.txt","database/bac_nr_ncbi/uniprot2kegg.txt"]) if  config["KEGG"] else [],
         ##### CAzy diamond
-	expand("{results}/cazy_diamond/{sample}_ncbi.csv", results=config["results"], sample=config["samples"]),
+	expand("{results}/cazy_diamond/{sample}_cazy.csv", results=config["results"], sample=config["samples"])
 
         
 
