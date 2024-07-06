@@ -3,9 +3,9 @@
 # Parameters for input and output data #########################################
 
 samples:
-    AFP2_C1_E_R_D03: "AFP2_C1_E_R_D03"
-    AFP2_C3_E_R_D10: "AFP2_C3_E_R_D10"
-    AFP2_O3_E_R_D04: "AFP2_O3_E_R_D04"
+    AFP2_C2_E_R_D08: "AFP2_C2_E_R_D08"
+    AFP2_C2_E_R_D09: "AFP2_C2_E_R_D09"
+    AFP2_O3_E_R_D08: "AFP2_O3_E_R_D08"
     #AFP2_O1_E_R_D05: "AFP2_O1_E_R_D05"
     #AFP2_O2_E_R_D09: "AFP2_O2_E_R_D09"
     #AFP2_O2_E_R_D10: "AFP2_O2_E_R_D10"
@@ -26,6 +26,7 @@ io: 5 # Restriction on input/output operations.
 # Cutadapt #####################################################################
 # Rrna Filtering
 rrna: "ribodetector" # or "sortmerna"
+GPU: FALSE 
 adapter: "GATCGGAAGAGCA" # Illumina adapter sequence, first 13bp
 ##  ASSEMBLY
 assembly: "SPADES" ## or "TRINITY"

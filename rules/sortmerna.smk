@@ -77,14 +77,29 @@ if config["rrna"]=="sortmerna":
 			separate_fastq(input.mrna, output.mrna_R1, output.mrna_R2)
 
 else:
-	rule ribodetector:
-		input:
-			reads = expand("{{results}}/qc/cleaned/{{sample}}_{read}.fastq.gz", read=config["reads"])
-		output:
-			mrna = expand("{{results}}/mrna/{{sample}}_{read}.fastq", read=config["reads"])
-		conda: "../envs/ribodetector.yaml"
-                threads: config["threads"]
-		shell:
-			"""
-			   ribodetector -t {threads}  -l 100   -i  {input.reads[0]} {input.reads[1]} -e rrna -m 16 --chunk_size=256 -o {output.mrna[0]}  {output.mrna[1]}
-			"""
+	if config["GPU"]=="TRUE":
+
+		rule ribodetector:
+			input:
+				reads = expand("{{results}}/qc/cleaned/{{sample}}_{read}.fastq.gz", read=config["reads"])
+			output:
+				mrna = expand("{{results}}/mrna/{{sample}}_{read}.fastq", read=config["reads"])
+			conda: "../envs/ribodetector.yaml"
+	                threads: config["threads"]
+			shell:
+				"""
+				   ribodetector -t {threads}  -l 100   -i  {input.reads[0]} {input.reads[1]} -e rrna -m 16 --chunk_size 256 -o {output.mrna[0]}  {output.mrna[1]}
+				"""
+	else:
+		rule ribodetector:
+			input:
+				reads = expand("{{results}}/qc/cleaned/{{sample}}_{read}.fastq.gz", read=config["reads"])
+			output:
+				mrna = expand("{{results}}/mrna/{{sample}}_{read}.fastq", read=config["reads"])
+			conda: "../envs/ribodetector.yaml"
+	                threads: config["threads"]
+			shell:
+				"""
+				   ribodetector_cpu -t {threads}  -l 100   -i  {input.reads[0]} {input.reads[1]} -e rrna  --chunk_size 256 -o {output.mrna[0]}  {output.mrna[1]}
+				"""
+
