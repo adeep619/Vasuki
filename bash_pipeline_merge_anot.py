@@ -1,6 +1,16 @@
 #bash
 #!/bin/bash
 
+#results
+##### run this script inside the results folder ####
+##### files needed for this scripts:
+    ##### database/bac_nr_ncbi/uniprot2ko.txt
+    ##### database/jgi/Final_correct_jgi_taxonomy.txt
+    ##### database/jgi/Final_correct_jgi_taxonomy.txt
+    ##### database/bac_nr_ncbi/taxids_taxanomy_nr_bac_edit.tsv
+    ##### database/KEGG_Pathways.tab
+
+
 # Navigate to the result folder
 #cd ~/path_to_results_folder
 #results=
