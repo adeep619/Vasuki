@@ -1,5 +1,5 @@
-<p align="center">
-<img src="vasuki logo.jfif" alt="logo" width="50"/>
+<p align="left">
+<img src="vasuki logo.jfif" alt="logo" width="150"/>
 </p>
 
 ## Vasuki
