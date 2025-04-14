@@ -1,3 +1,7 @@
+<p align="center">
+<img src="vasuki logo.jfif" alt="logo" width="500"/>
+</p>
+
 ## Vasuki
 - installation of Megan is important
 - this pipeline needs a database folder from JGI, UniProt, and Megan.
