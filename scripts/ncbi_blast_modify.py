@@ -1,5 +1,5 @@
 file2=open(snakemake.output[0], 'w')
-file2.write(f'#trinityId\taccession.version\n')
+file2.write(f'Name\taccession.version\n')
 with open(snakemake.input[0], 'r') as file:
     for line in file:
         if not "*" in line:

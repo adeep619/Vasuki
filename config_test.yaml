@@ -3,7 +3,7 @@
 # Parameters for input and output data #########################################
 
 samples:
-    AFP2_O3_E_R_D10: "AFP2_O3_E_R_D10"
+    AFP2_O3_E_R_D07: "AFP2_O3_E_R_D07"
 
 #   T1_S5_R_1_mil: "T1_S5_R_1_mil"
 #   B002: 'B002'  # Samples names start with B only
@@ -12,7 +12,7 @@ samples:
 raw: "../data/sfb_aq_s_21_MT_total_RNA"
 results: "sfb_aq_s_21_MT_total_RNA_results" # Folder for results. It will be created.
 format: "fastq" # File format of the unzipped samples, i. e. "fasta" or "fastq".
-reads: ["R1", "R2"] # Read extension: a list with either ["R1", "R2"] for paired end or ["R1"] for single end. It is ignored for fasta files.
+reads: ["R1", "R2"]
 # Performance parameters #######################################################
 
 threads: 40 # Maximum number of threads used by single snakemake rule, the maximum is automatically set to cores.
@@ -24,6 +24,8 @@ io: 5 # Restriction on input/output operations.
 adapter: "GATCGGAAGAGCA" # Illumina adapter sequence, first 13bp
 ##  ASSEMBLY
 assembly: "SPADES" ## or "TRINITY"
+
+# Databases ####################################################################
 
 # Databases ####################################################################
 
@@ -40,4 +42,3 @@ jgi_organism_ids: "fungi_ids_list.txt"
 ## KEGG Annotation
 KO_list_file: "/mnt/biodiv/KEGG/kegg/genes/ko/ko_genes.list"
 KEGG_pathways: "/mnt/biodiv/KEGG/kegg/pathway/pathway.list"
-
