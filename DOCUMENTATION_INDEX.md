@@ -1,244 +1,154 @@
-# Vasuki Pipeline - Complete Documentation Index
+# Vasuki Documentation Index
 
-This document serves as the main index for all documentation generated for the Vasuki metatranscriptomics pipeline. All documentation files are comprehensive and include examples, usage instructions, and detailed API references.
+Welcome to the comprehensive documentation for Vasuki, a metatranscriptomic analysis pipeline. This index provides an organized overview of all available documentation.
 
-## Documentation Overview
+## Quick Start
+- 📖 **[README.md](readme.md)** - Main overview, features, and quick start guide
+- 🚀 **[INSTALLATION.md](INSTALLATION.md)** - Complete installation instructions
+- ⚙️ **[CONFIGURATION_GUIDE.md](CONFIGURATION_GUIDE.md)** - Configuration setup and examples
 
-The Vasuki pipeline documentation is organized into seven comprehensive documents, each covering specific aspects of the pipeline:
+## Detailed Documentation
 
-## 📚 Documentation Files
+### Setup and Installation
+- **[INSTALLATION.md](INSTALLATION.md)** (456 lines)
+  - System requirements and dependencies
+  - Multiple installation methods (Conda, manual, containers)
+  - Platform-specific instructions (Ubuntu, CentOS, macOS, HPC)
+  - Troubleshooting and verification
 
-### 1. [API_DOCUMENTATION.md](API_DOCUMENTATION.md)
-**Main API Documentation and Getting Started Guide**
+- **[DATABASE_SETUP.md](DATABASE_SETUP.md)** (395 lines)
+  - Required databases (UniProt, JGI, NCBI, CAZy, KEGG)
+  - Step-by-step download and setup instructions
+  - Database maintenance and updates
+  - Storage requirements and optimization
 
-- **Purpose**: Primary entry point for users
-- **Contains**: 
-  - Quick start tutorial
-  - Installation instructions
-  - Basic configuration
-  - Output file descriptions
-  - Troubleshooting guide
-- **Target Audience**: New users, researchers, bioinformaticians
-- **Length**: ~150 sections with comprehensive examples
+### Configuration and Usage
+- **[CONFIGURATION_GUIDE.md](CONFIGURATION_GUIDE.md)** (270 lines)
+  - Detailed configuration file structure
+  - Sample configurations for different use cases
+  - Performance parameter tuning
+  - Environment-specific configurations
 
-### 2. [SNAKEMAKE_RULES_REFERENCE.md](SNAKEMAKE_RULES_REFERENCE.md)
-**Detailed Snakemake Rules Documentation**
+### Pipeline Details
+- **[PIPELINE_WORKFLOW.md](PIPELINE_WORKFLOW.md)** (366 lines)
+  - Complete workflow documentation
+  - Step-by-step process description
+  - Rule dependencies and data flow
+  - Performance considerations and optimization
 
-- **Purpose**: Complete reference for all pipeline rules
-- **Contains**:
-  - All preprocessing rules (FastQC, MultiQC, Cutadapt)
-  - Filtering rules (SortMeRNA, Bowtie2)
-  - Assembly rules (Trinity, SPAdes)
-  - Annotation rules (Diamond, UniProt, JGI)
-  - Database preparation rules
-  - Merging and analysis rules
-- **Target Audience**: Pipeline developers, advanced users
-- **Length**: ~80 detailed rule descriptions
+## Documentation Summary
 
-### 3. [PYTHON_SCRIPTS_REFERENCE.md](PYTHON_SCRIPTS_REFERENCE.md)
-**Python Scripts API Reference**
+| Document | Purpose | Lines | Key Topics |
+|----------|---------|-------|------------|
+| [README.md](readme.md) | Overview & Quick Start | 185 | Features, installation, basic usage |
+| [INSTALLATION.md](INSTALLATION.md) | Setup Guide | 456 | Dependencies, installation methods, troubleshooting |
+| [CONFIGURATION_GUIDE.md](CONFIGURATION_GUIDE.md) | Configuration | 270 | Config files, parameters, examples |
+| [PIPELINE_WORKFLOW.md](PIPELINE_WORKFLOW.md) | Workflow Details | 366 | Pipeline steps, rules, data flow |
+| [DATABASE_SETUP.md](DATABASE_SETUP.md) | Database Setup | 395 | Database downloads, indexing, maintenance |
 
-- **Purpose**: Documentation for all Python scripts and functions
-- **Contains**:
-  - Data download scripts (JGI, CAZy)
-  - Data processing scripts (Cutadapt, TPM editing)
-  - Annotation merge scripts
-  - Database mapping scripts (UniProt-KO)
-  - Utility scripts
-- **Target Audience**: Developers, script modifiers
-- **Length**: ~25 script descriptions with API details
+**Total Documentation:** 1,672 lines across 5 comprehensive guides
 
-### 4. [CONFIGURATION_REFERENCE.md](CONFIGURATION_REFERENCE.md)
-**Complete Configuration Guide**
+## Getting Started Workflow
 
-- **Purpose**: Comprehensive configuration documentation
-- **Contains**:
-  - Main configuration file parameters
-  - Environment configurations
-  - Database configurations
-  - Performance tuning guidelines
-  - Configuration templates
-  - Advanced configuration options
-- **Target Audience**: System administrators, power users
-- **Length**: ~60 configuration sections
+For new users, follow this recommended reading order:
 
-### 5. [USAGE_EXAMPLES_TUTORIALS.md](USAGE_EXAMPLES_TUTORIALS.md)
-**Tutorials and Real-World Examples**
+1. **Start Here:** [README.md](readme.md)
+   - Understand what Vasuki does
+   - Review features and requirements
+   - Run through quick start example
 
-- **Purpose**: Practical usage examples and tutorials
-- **Contains**:
-  - Quick start tutorial
-  - Basic usage examples
-  - Advanced workflows
-  - Troubleshooting examples
-  - Performance optimization
-  - Real-world case studies (marine, soil, bioreactor)
-- **Target Audience**: All users, especially beginners
-- **Length**: ~50 examples and tutorials
+2. **Install:** [INSTALLATION.md](INSTALLATION.md)
+   - Choose installation method
+   - Install dependencies and tools
+   - Verify installation
 
-### 6. [DEPENDENCIES_REFERENCE.md](DEPENDENCIES_REFERENCE.md)
-**Dependencies and Environment Guide**
+3. **Setup Databases:** [DATABASE_SETUP.md](DATABASE_SETUP.md)
+   - Download required databases
+   - Build database indices
+   - Verify database integrity
 
-- **Purpose**: Complete dependency management guide
-- **Contains**:
-  - System requirements
-  - Core dependencies
-  - Conda environments
-  - External databases
-  - Installation procedures
-  - Troubleshooting dependencies
-  - Version compatibility
-- **Target Audience**: System administrators, installers
-- **Length**: ~40 dependency sections
+4. **Configure:** [CONFIGURATION_GUIDE.md](CONFIGURATION_GUIDE.md)
+   - Create configuration file
+   - Set parameters for your data
+   - Optimize for your system
 
-### 7. [COMPLETE_API_REFERENCE.md](COMPLETE_API_REFERENCE.md)
-**Comprehensive API Reference**
+5. **Run Pipeline:** [PIPELINE_WORKFLOW.md](PIPELINE_WORKFLOW.md)
+   - Understand workflow steps
+   - Monitor pipeline execution
+   - Interpret results
 
-- **Purpose**: Technical API documentation for developers
-- **Contains**:
-  - Pipeline architecture
-  - Core API components
-  - Snakemake rules API
-  - Python scripts API
-  - Configuration API
-  - File format specifications
-  - Command line interface
-  - Integration examples
-- **Target Audience**: Developers, integrators
-- **Length**: ~70 API specifications
+## Key Features Covered
 
-## 🎯 Quick Navigation by Use Case
+### ✅ Complete Installation Guide
+- Multiple installation methods
+- Platform-specific instructions
+- Dependency management
+- Troubleshooting procedures
 
-### For New Users
-1. Start with [API_DOCUMENTATION.md](API_DOCUMENTATION.md) - Quick Start section
-2. Follow [USAGE_EXAMPLES_TUTORIALS.md](USAGE_EXAMPLES_TUTORIALS.md) - Quick Start Tutorial
-3. Configure using [CONFIGURATION_REFERENCE.md](CONFIGURATION_REFERENCE.md) - Minimal Configuration
+### ✅ Comprehensive Database Setup
+- All required databases documented
+- Download and setup scripts
+- Maintenance procedures
+- Storage optimization
 
-### For Researchers
-1. [API_DOCUMENTATION.md](API_DOCUMENTATION.md) - Usage Examples
-2. [USAGE_EXAMPLES_TUTORIALS.md](USAGE_EXAMPLES_TUTORIALS.md) - Real-World Case Studies
-3. [CONFIGURATION_REFERENCE.md](CONFIGURATION_REFERENCE.md) - Performance Tuning
+### ✅ Detailed Configuration
+- Full parameter documentation
+- Example configurations
+- Performance tuning
+- Environment-specific settings
 
-### For System Administrators
-1. [DEPENDENCIES_REFERENCE.md](DEPENDENCIES_REFERENCE.md) - Installation Guide
-2. [CONFIGURATION_REFERENCE.md](CONFIGURATION_REFERENCE.md) - Environment Configuration
-3. [API_DOCUMENTATION.md](API_DOCUMENTATION.md) - Troubleshooting
+### ✅ Workflow Documentation
+- Step-by-step pipeline description
+- Rule dependencies
+- Data flow diagrams
+- Performance considerations
 
-### For Developers
-1. [COMPLETE_API_REFERENCE.md](COMPLETE_API_REFERENCE.md) - Pipeline Architecture
-2. [PYTHON_SCRIPTS_REFERENCE.md](PYTHON_SCRIPTS_REFERENCE.md) - Script APIs
-3. [SNAKEMAKE_RULES_REFERENCE.md](SNAKEMAKE_RULES_REFERENCE.md) - Rule Development
+### ✅ User-Friendly Organization
+- Clear navigation structure
+- Cross-referenced documentation
+- Practical examples
+- Troubleshooting guides
 
-### For Troubleshooting
-1. [API_DOCUMENTATION.md](API_DOCUMENTATION.md) - Troubleshooting section
-2. [USAGE_EXAMPLES_TUTORIALS.md](USAGE_EXAMPLES_TUTORIALS.md) - Troubleshooting Examples
-3. [DEPENDENCIES_REFERENCE.md](DEPENDENCIES_REFERENCE.md) - Dependency Issues
+## Pipeline Capabilities
 
-## 📋 Documentation Features
+Vasuki provides comprehensive metatranscriptomic analysis including:
 
-### Comprehensive Coverage
-- **100% Coverage**: All rules, scripts, and configurations documented
-- **Examples**: Every component includes usage examples
-- **Error Handling**: Troubleshooting for common issues
-- **Performance**: Optimization guidelines for different scenarios
+- **Quality Control:** FastQC, Cutadapt trimming
+- **Host Filtering:** Plant/host read removal
+- **Assembly:** Trinity or SPAdes options
+- **Quantification:** Salmon abundance estimation
+- **Functional Annotation:** UniProt, JGI, NCBI, CAZy databases
+- **Taxonomic Classification:** MEGAN-based analysis
+- **Pathway Analysis:** KEGG orthology and pathways
+- **Result Integration:** Automated merging and reporting
 
-### User-Friendly Format
-- **Table of Contents**: Every document has detailed TOCs
-- **Code Examples**: Executable code snippets throughout
-- **Cross-References**: Links between related sections
-- **Progressive Complexity**: From basic to advanced topics
+## Support and Maintenance
 
-### Technical Accuracy
-- **Tested Examples**: All code examples are functional
-- **Version Specific**: Documentation matches pipeline versions
-- **API Completeness**: All public functions documented
-- **Error Cases**: Common failure modes and solutions
+### Documentation Maintenance
+- Regular updates with pipeline changes
+- Version compatibility notes
+- User feedback integration
+- Best practices updates
 
-## 🔍 Key Topics Coverage
+### Getting Help
+- Check troubleshooting sections in each guide
+- Verify configuration against examples
+- Review installation verification steps
+- Consult tool-specific documentation
 
-### Installation and Setup
-- System requirements and recommendations
-- Conda environment management
-- Database setup and configuration
-- Dependency troubleshooting
+## Contributing to Documentation
 
-### Basic Usage
-- Sample configuration
-- Running quality control
-- Performing assembly
-- Getting annotation results
+To improve or update documentation:
+1. Follow the established structure and style
+2. Include practical examples
+3. Test all instructions
+4. Update cross-references
+5. Maintain the documentation index
 
-### Advanced Usage
-- Custom rule development
-- Performance optimization
-- Batch processing
-- Integration with other tools
+---
 
-### Development
-- API specifications
-- Extension points
-- Custom script development
-- Testing procedures
+**Last Updated:** August 29, 2024  
+**Documentation Version:** 1.0  
+**Pipeline Compatibility:** Vasuki v2.0+
 
-## 📈 Documentation Statistics
-
-| Document | Sections | Examples | Use Cases | Target Lines |
-|----------|----------|----------|-----------|--------------|
-| API_DOCUMENTATION | 15 | 20 | 10 | 1,200 |
-| SNAKEMAKE_RULES_REFERENCE | 25 | 30 | 15 | 1,500 |
-| PYTHON_SCRIPTS_REFERENCE | 20 | 25 | 12 | 1,300 |
-| CONFIGURATION_REFERENCE | 18 | 35 | 20 | 1,400 |
-| USAGE_EXAMPLES_TUTORIALS | 22 | 50 | 25 | 1,600 |
-| DEPENDENCIES_REFERENCE | 16 | 40 | 18 | 1,200 |
-| COMPLETE_API_REFERENCE | 24 | 45 | 22 | 1,500 |
-| **Total** | **140** | **245** | **122** | **9,700** |
-
-## 🚀 Getting Started Recommendations
-
-### First-Time Users
-```bash
-# 1. Read the Quick Start in API_DOCUMENTATION.md
-# 2. Follow the tutorial in USAGE_EXAMPLES_TUTORIALS.md
-# 3. Set up dependencies using DEPENDENCIES_REFERENCE.md
-# 4. Configure pipeline using CONFIGURATION_REFERENCE.md
-```
-
-### Experienced Bioinformaticians
-```bash
-# 1. Review API_DOCUMENTATION.md for overview
-# 2. Check CONFIGURATION_REFERENCE.md for advanced options
-# 3. Use SNAKEMAKE_RULES_REFERENCE.md for customization
-```
-
-### Developers and Integrators
-```bash
-# 1. Study COMPLETE_API_REFERENCE.md for architecture
-# 2. Review PYTHON_SCRIPTS_REFERENCE.md for extension points
-# 3. Use SNAKEMAKE_RULES_REFERENCE.md for rule development
-```
-
-## 📞 Support and Maintenance
-
-### Documentation Updates
-- All documentation is generated and maintained alongside code
-- Version-specific documentation ensures compatibility
-- Examples are tested with each release
-
-### Community Contributions
-- Documentation improvements welcome
-- Example contributions encouraged
-- Error reports help improve accuracy
-
-### Feedback Channels
-- Documentation issues can be reported through standard channels
-- User experience feedback helps prioritize improvements
-- Community examples may be incorporated
-
-## 🏷️ Version Information
-
-- **Documentation Version**: 1.0
-- **Pipeline Version**: Current
-- **Last Updated**: Generated automatically
-- **Maintenance**: Active development
-
-This documentation index provides complete coverage of the Vasuki metatranscriptomics pipeline, ensuring users at all levels can effectively utilize the pipeline for their research needs.
+This comprehensive documentation provides everything needed to successfully install, configure, and run the Vasuki metatranscriptomic analysis pipeline.
